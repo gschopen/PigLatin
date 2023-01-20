@@ -33,6 +33,19 @@ public String pigLatin(String sWord)
   {
     return sWord + "ay";
   }
+  if(findFirstVowel(sWord) == 0){
+   return sWord + "way";
+  }
+  if(sWord.substring(0,2).equals("qu")){
+    sWord = sWord.substring(2);
+     return sWord+"quay";
+  }
+  if(findFirstVowel(sWord) > 0){
+    int i = findFirstVowel(sWord);
+    String chub = sWord.substring(0,i);
+   sWord = sWord.substring(i);
+   return sWord + chub + "ay";
+  }
   else
   {
     return "ERROR!";
